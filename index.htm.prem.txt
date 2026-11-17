@@ -1,0 +1,430 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Patel Prem | Computer Engineer</title>
+<meta name="description" content="Official portfolio of Patel Prem, Computer Engineering student from Jambusar, Gujarat.">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+:root{--bg:#080b18;--card:#11182b;--blue:#3985ff;--purple:#a855f7;--white:#fff;--gray:#a7b0c3}
+body{font-family:Poppins,sans-serif;background:var(--bg);color:var(--white);overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+.container{width:88%;max-width:1200px;margin:auto}
+.section{padding:100px 0}
+.alternate{background:#0c1122}
+
+/* NAVBAR */
+header{background:rgba(8,11,24,.96);position:sticky;top:0;z-index:1000;border-bottom:1px solid #202b45;backdrop-filter:blur(15px)}
+.navbar{height:75px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:25px;font-weight:800}
+.logo span{color:var(--blue)}
+.nav-links{display:flex;list-style:none;gap:28px}
+.nav-links a{font-size:13px;color:var(--gray);transition:.3s}
+.nav-links a:hover{color:var(--blue)}
+.menu-toggle{display:none;background:none;border:0;color:white;font-size:24px;cursor:pointer}
+
+/* HERO */
+.hero{min-height:650px;display:flex;align-items:center;background:radial-gradient(circle at 80% 40%,rgba(91,60,190,.17),transparent 35%),radial-gradient(circle at 10% 20%,rgba(34,113,255,.12),transparent 35%)}
+.hero-content{display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:50px}
+.welcome{color:var(--blue);letter-spacing:4px;font-size:12px;font-weight:600;margin-bottom:20px}
+.hero-text h1{font-size:clamp(35px,5vw,58px);line-height:1.3;margin-bottom:12px}
+.hero-text h1 span{background:linear-gradient(90deg,var(--blue),var(--purple));-webkit-background-clip:text;color:transparent}
+.hero-text h2{font-size:21px;font-weight:500;color:#c5cce0;margin-bottom:20px}
+.hero-description{max-width:570px;color:var(--gray);font-size:14px;line-height:2}
+.hero-buttons{display:flex;gap:15px;margin-top:30px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:13px 24px;border-radius:8px;font-size:13px;font-weight:600;border:none;cursor:pointer;transition:.3s;font-family:inherit}
+.primary-btn{background:linear-gradient(90deg,var(--blue),var(--purple));color:white}
+.secondary-btn{border:1px solid var(--blue);color:white}
+.btn:hover{transform:translateY(-4px);box-shadow:0 8px 25px rgba(57,133,255,.25)}
+.social-links{display:flex;gap:15px;margin-top:35px}
+.social-links a{width:40px;height:40px;border:1px solid #303b57;border-radius:50%;display:flex;justify-content:center;align-items:center;transition:.3s}
+.social-links a:hover{background:var(--blue);transform:translateY(-4px)}
+
+/* PROFILE */
+.hero-image{position:relative;display:flex;justify-content:center;align-items:center}
+.hero-image img{width:min(330px,100%);height:390px;object-fit:cover;object-position:center;border-radius:180px 180px 30px 30px;border:4px solid var(--blue);position:relative;z-index:2}
+.image-glow{position:absolute;width:300px;height:300px;background:var(--purple);filter:blur(130px);opacity:.4}
+.image-tag{position:absolute;bottom:20px;z-index:3;background:#141d34;border:1px solid #34456d;padding:12px 20px;border-radius:30px;font-size:12px}
+
+/* HEADINGS */
+.section-heading{text-align:center;margin-bottom:55px}
+.section-heading p{color:var(--blue);font-size:12px;letter-spacing:3px;margin-bottom:10px}
+.section-heading h2{font-size:36px}
+.section-heading h2 span{color:var(--blue)}
+
+/* ABOUT */
+.about-card{display:grid;grid-template-columns:80px 1fr;gap:25px;padding:40px;background:var(--card);border:1px solid #202b45;border-radius:18px;transition:.3s}
+.about-card:hover{border-color:var(--blue)}
+.about-icon,.education-icon{width:65px;height:65px;background:linear-gradient(135deg,var(--blue),var(--purple));border-radius:15px;display:flex;align-items:center;justify-content:center;font-size:27px}
+.about-card h3{font-size:23px;margin-bottom:15px}
+.about-card p{color:var(--gray);line-height:2;font-size:14px}
+.about-details{margin-top:20px}
+.about-details p{margin:8px 0}
+.about-details i{color:var(--blue);width:25px}
+
+/* EDUCATION */
+.education-card{max-width:700px;margin:auto;padding:35px;display:flex;gap:25px;background:var(--card);border:1px solid #263654;border-radius:18px;transition:.3s}
+.education-card:hover{transform:translateY(-5px);border-color:var(--blue)}
+.education-label{font-size:11px;color:var(--blue);letter-spacing:2px}
+.education-card h3{margin:8px 0;font-size:22px}
+.education-card h4{color:#c4cce0;margin-bottom:8px}
+.education-card p{color:var(--gray);font-size:13px}
+.status{display:inline-block;margin-top:15px;padding:6px 14px;background:rgba(57,133,255,.15);color:#70aaff;border-radius:20px;font-size:11px}
+
+/* SKILLS */
+.skills-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.skill-card{background:var(--card);padding:30px 15px;text-align:center;border:1px solid #202b45;border-radius:15px;transition:.3s}
+.skill-card:hover{transform:translateY(-8px);border-color:var(--blue);background:#17233c}
+.skill-card i{font-size:35px;color:var(--blue);margin-bottom:18px}
+.skill-card h3{font-size:16px;margin-bottom:8px}
+.skill-card p{font-size:11px;color:var(--gray)}
+
+/* PROJECTS */
+.projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.project-card{background:var(--card);border:1px solid #202b45;border-radius:16px;overflow:hidden;transition:.3s}
+.project-card:hover{transform:translateY(-8px);border-color:var(--blue)}
+.project-icon{height:155px;background:linear-gradient(135deg,#142e62,#49266e);display:flex;align-items:center;justify-content:center}
+.project-icon i{font-size:55px}
+.project-info{padding:25px}
+.project-info h3{font-size:18px;margin-bottom:12px}
+.project-info p{color:var(--gray);font-size:12px;line-height:1.9;min-height:70px}
+.project-link{display:inline-block;color:#64a1ff;margin-top:18px;font-size:13px}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:45px}
+.contact-info h3{font-size:27px;margin-bottom:12px}
+.contact-info>p{color:var(--gray);font-size:13px;line-height:1.8}
+.contact-item{display:flex;gap:20px;align-items:center;margin-top:30px}
+.contact-item>i{background:#17284a;color:var(--blue);padding:15px;border-radius:10px;font-size:20px}
+.contact-item h4{font-size:14px}
+.contact-item p{color:var(--gray);font-size:13px;margin-top:5px}
+.contact-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.contact-form{display:flex;flex-direction:column;gap:16px}
+.contact-form input,.contact-form textarea{width:100%;padding:16px;background:var(--card);border:1px solid #263654;outline:none;border-radius:8px;color:white;font-family:inherit;font-size:13px}
+.contact-form input:focus,.contact-form textarea:focus{border-color:var(--blue)}
+.contact-form textarea{resize:vertical}
+.contact-form button{align-self:flex-start}
+
+/* FOOTER */
+footer{padding:40px 0;background:#050814;border-top:1px solid #202b45}
+.footer-content{text-align:center}
+.footer-content p{color:var(--gray);font-size:12px;margin-top:12px}
+
+/* WHATSAPP */
+.floating-whatsapp{position:fixed;bottom:25px;right:25px;z-index:999;width:55px;height:55px;border-radius:50%;background:#25d366;color:white;display:flex;justify-content:center;align-items:center;font-size:27px;box-shadow:0 5px 20px #0005;transition:.3s}
+.floating-whatsapp:hover{transform:scale(1.1)}
+
+/* ANIMATION */
+@keyframes fadeUp{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:translateY(0)}}
+.hero-text,.hero-image{animation:fadeUp 1s ease}
+
+/* MOBILE */
+@media(max-width:900px){
+.hero-content{grid-template-columns:1fr 1fr;gap:25px}
+.skills-grid{grid-template-columns:repeat(2,1fr)}
+.projects-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:650px){
+.container{width:90%}
+.section{padding:70px 0}
+.navbar{height:65px}
+.menu-toggle{display:block}
+.nav-links{display:none;position:absolute;top:65px;left:0;width:100%;background:#10182b;flex-direction:column;padding:25px 7%;gap:20px}
+.nav-links.active{display:flex}
+.hero{padding-top:65px}
+.hero-content{grid-template-columns:1fr;text-align:center}
+.hero-text h1{font-size:37px}
+.hero-text h2{font-size:17px}
+.hero-buttons,.social-links{justify-content:center}
+.hero-image{margin-top:35px}
+.hero-image img{height:340px;width:280px}
+.section-heading h2{font-size:29px}
+.about-card{grid-template-columns:1fr;padding:25px}
+.education-card{padding:25px;gap:15px}
+.education-icon{min-width:55px;width:55px;height:55px;font-size:22px}
+.skills-grid{grid-template-columns:repeat(2,1fr);gap:12px}
+.skill-card{padding:23px 8px}
+.projects-grid{grid-template-columns:1fr}
+.contact-grid{grid-template-columns:1fr}
+.contact-form button{width:100%}
+.floating-whatsapp{width:50px;height:50px;right:15px;bottom:15px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav class="navbar container">
+<a href="#home" class="logo">PATEL<span> PREM.</span></a>
+<button class="menu-toggle" id="menu-toggle" aria-label="Menu"><i class="fas fa-bars"></i></button>
+<ul class="nav-links" id="nav-links">
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#education">Education</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+</header>
+
+<main>
+
+<!-- HOME -->
+<section id="home" class="hero section">
+<div class="container hero-content">
+<div class="hero-text">
+<p class="welcome">WELCOME TO MY PORTFOLIO</p>
+<h1>Hello, I'm <span>Patel Prem</span></h1>
+<h2>Computer Engineering Student</h2>
+<p class="hero-description">
+I am from Jambusar, Gujarat, passionate about technology,
+computers, AI and web development. I love exploring new
+technologies and building creative digital experiences.
+</p>
+<div class="hero-buttons">
+<a href="#contact" class="btn primary-btn">Contact Me <i class="fas fa-arrow-right"></i></a>
+<a href="#projects" class="btn secondary-btn">View Projects</a>
+</div>
+<div class="social-links">
+<a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+<a href="https://github.com/" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+<a href="https://wa.me/918141335765" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+</div>
+</div>
+
+<div class="hero-image">
+<div class="image-glow"></div>
+<img src="prem.jpg" alt="Patel Prem">
+<div class="image-tag"><i class="fas fa-code"></i> Computer Engineer</div>
+</div>
+</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+<div class="container">
+<div class="section-heading">
+<p>GET TO KNOW ME</p>
+<h2>About <span>Me</span></h2>
+</div>
+<div class="about-card">
+<div class="about-icon"><i class="fas fa-user-graduate"></i></div>
+<div>
+<h3>Who Am I?</h3>
+<p>
+My name is Patel Prem. I am a Computer Engineering student
+from Jambusar, Gujarat, India. I study at K.J. Polytechnic,
+Bharuch. I am interested in technology, Artificial Intelligence,
+software development and creating modern websites. My goal
+is to learn new skills and build useful digital projects.
+</p>
+<div class="about-details">
+<p><i class="fas fa-user"></i> <b>Name:</b> Patel Prem</p>
+<p><i class="fas fa-map-marker-alt"></i> <b>Location:</b> Jambusar, Gujarat</p>
+<p><i class="fas fa-laptop-code"></i> <b>Profession:</b> Computer Engineering Student</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education" class="section alternate">
+<div class="container">
+<div class="section-heading">
+<p>MY ACADEMIC JOURNEY</p>
+<h2>My <span>Education</span></h2>
+</div>
+<div class="education-card">
+<div class="education-icon"><i class="fas fa-graduation-cap"></i></div>
+<div>
+<span class="education-label">DIPLOMA</span>
+<h3>Computer Engineering</h3>
+<h4>K.J. Polytechnic, Bharuch</h4>
+<p>Bharuch, Gujarat, India</p>
+<span class="status">Currently Studying</span>
+</div>
+</div>
+</div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="section">
+<div class="container">
+<div class="section-heading">
+<p>WHAT I AM LEARNING</p>
+<h2>My <span>Skills</span></h2>
+</div>
+<div class="skills-grid">
+<div class="skill-card"><i class="fab fa-html5"></i><h3>HTML</h3><p>Web Structure</p></div>
+<div class="skill-card"><i class="fab fa-css3-alt"></i><h3>CSS</h3><p>Web Designing</p></div>
+<div class="skill-card"><i class="fab fa-js"></i><h3>JavaScript</h3><p>Web Interactivity</p></div>
+<div class="skill-card"><i class="fab fa-python"></i><h3>Python</h3><p>Programming</p></div>
+<div class="skill-card"><i class="fas fa-database"></i><h3>SQL</h3><p>Database</p></div>
+<div class="skill-card"><i class="fas fa-robot"></i><h3>AI Tools</h3><p>Artificial Intelligence</p></div>
+<div class="skill-card"><i class="fas fa-globe"></i><h3>Web Development</h3><p>Website Creation</p></div>
+<div class="skill-card"><i class="fas fa-microchip"></i><h3>Computer Technology</h3><p>Technical Knowledge</p></div>
+</div>
+</div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="section alternate">
+<div class="container">
+<div class="section-heading">
+<p>MY CREATIVE WORK</p>
+<h2>My <span>Projects</span></h2>
+</div>
+<div class="projects-grid">
+
+<div class="project-card">
+<div class="project-icon"><i class="fas fa-user-circle"></i></div>
+<div class="project-info">
+<h3>Personal Portfolio</h3>
+<p>A professional personal portfolio website showcasing my education, skills and projects.</p>
+<a href="#home" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+</div>
+</div>
+
+<div class="project-card">
+<div class="project-icon"><i class="fas fa-shopping-cart"></i></div>
+<div class="project-info">
+<h3>Online Shopping Website</h3>
+<p>A modern shopping website concept with product listings and attractive design.</p>
+<a href="#contact" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+</div>
+</div>
+
+<div class="project-card">
+<div class="project-icon"><i class="fas fa-mobile-alt"></i></div>
+<div class="project-info">
+<h3>Student Information App</h3>
+<p>A student-focused app concept for education information and career guidance.</p>
+<a href="#contact" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+<div class="container">
+<div class="section-heading">
+<p>LET'S CONNECT</p>
+<h2>Contact <span>Me</span></h2>
+</div>
+
+<div class="contact-grid">
+<div class="contact-info">
+<h3>Let's Talk!</h3>
+<p>Have a project or an idea? Feel free to contact me.</p>
+
+<div class="contact-item">
+<i class="fas fa-phone"></i>
+<div><h4>Phone</h4><p>8141335765</p></div>
+</div>
+
+<div class="contact-item">
+<i class="fas fa-map-marker-alt"></i>
+<div><h4>Location</h4><p>Jambusar, Gujarat, India</p></div>
+</div>
+
+<div class="contact-actions">
+<a href="https://wa.me/918141335765" target="_blank" class="btn primary-btn"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+<a href="tel:+918141335765" class="btn secondary-btn"><i class="fas fa-phone"></i> Call Now</a>
+</div>
+</div>
+
+<form id="contact-form" class="contact-form">
+<input type="text" id="name" placeholder="Your Name" required>
+<input type="email" id="email" placeholder="Your Email" required>
+<input type="text" id="subject" placeholder="Subject" required>
+<textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+<button type="submit" class="btn primary-btn">Send Message <i class="fas fa-paper-plane"></i></button>
+</form>
+</div>
+</div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+<div class="container footer-content">
+<a href="#home" class="logo">PATEL<span> PREM.</span></a>
+<p>Designed with passion by Patel Prem</p>
+<p id="copyright">© 2026 Patel Prem | Computer Engineer | All Rights Reserved.</p>
+</div>
+</footer>
+
+<!-- WHATSAPP FLOATING BUTTON -->
+<a href="https://wa.me/918141335765" class="floating-whatsapp" target="_blank" aria-label="WhatsApp">
+<i class="fab fa-whatsapp"></i>
+</a>
+
+<script>
+// MOBILE MENU
+const menuToggle=document.getElementById("menu-toggle");
+const navLinks=document.getElementById("nav-links");
+
+menuToggle.addEventListener("click",()=>{
+navLinks.classList.toggle("active");
+const icon=menuToggle.querySelector("i");
+icon.classList.toggle("fa-bars");
+icon.classList.toggle("fa-xmark");
+});
+
+// CLOSE MENU
+document.querySelectorAll(".nav-links a").forEach(link=>{
+link.addEventListener("click",()=>{
+navLinks.classList.remove("active");
+const icon=menuToggle.querySelector("i");
+icon.classList.remove("fa-xmark");
+icon.classList.add("fa-bars");
+});
+});
+
+// CONTACT FORM TO WHATSAPP
+document.getElementById("contact-form").addEventListener("submit",function(e){
+e.preventDefault();
+
+const name=document.getElementById("name").value.trim();
+const email=document.getElementById("email").value.trim();
+const subject=document.getElementById("subject").value.trim();
+const message=document.getElementById("message").value.trim();
+
+if(!name||!email||!subject||!message){
+alert("Please fill in all fields.");
+return;
+}
+
+const phone="918141335765";
+const whatsappMessage=
+"Hello Patel Prem!"+
+"\n\nName: "+name+
+"\nEmail: "+email+
+"\nSubject: "+subject+
+"\nMessage: "+message;
+
+const url="https://wa.me/"+phone+"?text="+encodeURIComponent(whatsappMessage);
+window.open(url,"_blank");
+this.reset();
+});
+
+// AUTOMATIC COPYRIGHT YEAR
+document.getElementById("copyright").textContent=
+"© "+new Date().getFullYear()+" Patel Prem | Computer Engineer | All Rights Reserved.";
+</script>
+
+</body>
+</html>
